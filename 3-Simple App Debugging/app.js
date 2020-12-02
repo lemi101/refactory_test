@@ -2,8 +2,7 @@ const express = require("express");
 const authService = require("./src/services/authService");
 const AuthCallbackService = require("./src/services/authCallbackService");
 
-const config = require("./src/config");
-
+const config = require("./src/config/").config;
 const app = express();
 
 app.get("/", (req, res) => {

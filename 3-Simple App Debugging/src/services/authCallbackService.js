@@ -1,6 +1,6 @@
 const axios = require("axios");
 const UserServices = require("./userInfoService");
-const config = require("../config");
+const config = require("../config").config;
 
 function callback(req, res) {
   const body = {
@@ -11,9 +11,10 @@ function callback(req, res) {
   const options = { headers: { accept: "application/json" } };
   axios
     .post(`${config.oauthUrl}/access_token`, body, options)
-    .then((res) => resp.data["accessToken"])
+    .then((resp) => resp.data["access_token"])
     .then((accessToken) => {
       const user = UserServices.getUserInfo(accessToken);
+      console.log(user);
       res.json({
         data: {
           login: user.login,
