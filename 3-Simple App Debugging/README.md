@@ -33,4 +33,6 @@ Perbaikan nama variable resp
 
 perbaikan module import getuserinfo dari userinfoservice
 
+Async await promise authcalback n userinfoservice
+
 ---
